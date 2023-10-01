@@ -1,0 +1,35 @@
+@server = http://localhost:3000
+
+###
+GET {{server}}/movies
+Content-Type: application/json
+
+###
+
+POST {{server}}/movies
+Content-Type: application/json
+
+{
+    "title": "Tenet",
+    "year": 2000,
+    "genres": ["a", "b", "c"]
+}
+
+###
+DELETE {{server}}/movies/1
+Content-Type: application/json
+
+###
+PATCH  {{server}}/movies/1
+Content-Type: application/json
+
+{
+    "year": 2025,
+}
+
+###
+# search
+GET {{server}}/movies/search
+?year=2021
+&a=3
+Content-Type: application/json
